@@ -8,6 +8,34 @@
   </head>
   <body>
     <h1>Getting started with DemeterLAB</h1>
+    <h2>Firebase Firestore tests</h2>
+
+    <form class="add">
+      <label for="type">Type:</label>
+      <input type="text" name="type" required />
+      <label for="owner">Owner:</label>
+      <input type="text" name="owner" required />
+
+      <button>Add a new animal</button>
+    </form>
+
+    <form class="delete">
+      <label for="id">Document ID:</label>
+      <input type="text" name="id" required />
+
+      <button>Delete an animal</button>
+    </form>
+
+    <form class="update">
+      <label for="id">Document ID:</label>
+      <input type="text" name="id" required />
+
+      <label for="owner">Owner:</label>
+      <input type="text" name="owner" required />
+
+      <button>Update an animal</button>
+    </form>
+
     <script src="main.js"></script>
   </body>
 </html>
