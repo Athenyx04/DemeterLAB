@@ -6,7 +6,7 @@ import './Reset.css';
 
 function Reset() {
   const [email, setEmail] = useState('');
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ function Reset() {
     if (user) {
       navigate('/dashboard');
     }
-  }, [user, loading]);
+  }, [user, loading, navigate]);
 
   return (
     <div className="reset">
@@ -29,11 +29,8 @@ function Reset() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email Address"
         />
-        <button className="reset__btn" onClick={sendPasswordReset(email)}>
+        <button className="reset__btn" onClick={() => sendPasswordReset(email)}>
           Send password reset email
-        </button>
-        <button className="reset__btn" onClick={sendPasswordReset(email)}>
-          Register with Google
         </button>
         <div>
           Don't have an account? <Link to="/register">Register Here!</Link>
